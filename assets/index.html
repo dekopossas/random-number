@@ -14,8 +14,34 @@
         <div>
           <h3>Qual o Número?</h3>
           <h5>É Menor ou É Maior ou Você acertou!!!</h5>
-          <div>456</div>
-          <button>Novo Jogo</button>
+          <div id="display-1" class="display-container display-size-12 display-no-0">
+            <div class="segment-x segment-a"><span class="segment-border"></span></div>
+            <div class="segment-y segment-b"><span class="segment-border"></span></div>
+            <div class="segment-y segment-c"><span class="segment-border"></span></div>
+            <div class="segment-x segment-d"><span class="segment-border"></span></div>
+            <div class="segment-y segment-e"><span class="segment-border"></span></div>
+            <div class="segment-y segment-f"><span class="segment-border"></span></div>
+            <div class="segment-x segment-g"><span class="segment-border"></span></div>
+          </div>
+          <div id="display-2" class="display-container display-size-12 display-no-1">
+            <div class="segment-x segment-a"><span class="segment-border"></span></div>
+            <div class="segment-y segment-b"><span class="segment-border"></span></div>
+            <div class="segment-y segment-c"><span class="segment-border"></span></div>
+            <div class="segment-x segment-d"><span class="segment-border"></span></div>
+            <div class="segment-y segment-e"><span class="segment-border"></span></div>
+            <div class="segment-y segment-f"><span class="segment-border"></span></div>
+            <div class="segment-x segment-g"><span class="segment-border"></span></div>
+          </div>
+          <div id="display-3" class="display-container display-size-12 display-no-2">
+            <div class="segment-x segment-a"><span class="segment-border"></span></div>
+            <div class="segment-y segment-b"><span class="segment-border"></span></div>
+            <div class="segment-y segment-c"><span class="segment-border"></span></div>
+            <div class="segment-x segment-d"><span class="segment-border"></span></div>
+            <div class="segment-y segment-e"><span class="segment-border"></span></div>
+            <div class="segment-y segment-f"><span class="segment-border"></span></div>
+            <div class="segment-x segment-g"><span class="segment-border"></span></div>
+          </div>
+          <button onclick="fetchNumber()">Novo Jogo</button>
           <form>
             <input type="number" name="number" placeholder="" />
             <button type="submit">Enviar</button>
