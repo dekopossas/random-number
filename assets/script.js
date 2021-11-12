@@ -1,9 +1,10 @@
 const URL_TO_FETCH = 'https://us-central1-ss-devops.cloudfunctions.net/rand?min=1&max=300';
 
+let currentNumber = 0;
 const fetchNumber =() => {
   fetch(URL_TO_FETCH)
     .then((response) => response.json())
-    .then((data) => console.log(data))
+    .then((data) => currentNumber = data.value)
     .catch((err) => console.error('Failed retrieving information', err));
 };
 
@@ -17,14 +18,14 @@ function setdisplays() {
   let arr = [...value]
 
   if(arr.length === 3) {
-    display1.className = baseClass + arr[2];
+    display1.className = baseClass + arr[0];
     display2.className = baseClass + arr[1];
-    display3.className = baseClass + arr[0];
+    display3.className = baseClass + arr[2];
   }
   if(arr.length === 2) {
     display1.className = baseClass + 0;
-    display2.className = baseClass + arr[1];
-    display3.className = baseClass + arr[0];
+    display2.className = baseClass + arr[0];
+    display3.className = baseClass + arr[1];
   }
   if(arr.length === 1) {
     display1.className = baseClass + 0;
@@ -37,3 +38,19 @@ function imprimiValor() {
   let value = document.getElementById('number').value;
   console.log(value);
 }
+
+function setCurrentNumber() {
+  fetchNumber()
+};
+
+function imprimiCurrentNumber() {
+  console.log(currentNumber);
+}
+
+let tip1 = document.getElementById('smaller');
+let tip2 = document.getElementById('bigger');
+let tip3 = document.getElementById('win');
+
+const setTip = () => {
+  
+};

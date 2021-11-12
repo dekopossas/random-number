@@ -13,7 +13,9 @@
       <section>
         <div class="container">
           <h3>Qual o Número?</h3>
-          <h5>É Menor ou É Maior ou Você acertou!!!</h5>
+          <h5 id="smaller">É Menor</h5>
+          <h5 id="bigger">É Maior</h5>
+          <h5 id="win">Você acertou!!!</h5>
           <div id="vertical-center">
             <div id="clock-container">
               <div id="display-1" class="display-container display-size-12 display-no-0">
@@ -46,15 +48,17 @@
             </div>
           </div>
           <div>
-            <button onclick="">Novo Jogo</button>
+            <button onclick="setCurrentNumber()">Novo Jogo</button>
             <form>
               <input
                 id="number"
-                type="number"
+                type="text"
                 name="number"
-                placeholder="Digite um número aqui"
+                placeholder="Digite um numero de 1 a 300"
+                maxlength="3"
               />
               <button type="button" onclick="setdisplays()">Enviar</button>
+              <button type="button" onclick="imprimiCurrentNumber()">butoba</button>
             </form>
           </div>
         </div>
