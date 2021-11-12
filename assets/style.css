@@ -161,9 +161,21 @@ body {
 }
 
 .error {
-	border-color: red !important;
+  border-color: red !important;
 }
 
 .win {
-	border-color: green !important;
+  border-color: green !important;
+}
+
+.smaller {
+  display: none;
+}
+
+.bigger {
+  display: none;
+}
+
+.win {
+  display: none;
 }
