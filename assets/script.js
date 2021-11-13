@@ -51,13 +51,20 @@ let tip1 = document.getElementById('smaller');
 let tip2 = document.getElementById('bigger');
 let tip3 = document.getElementById('win');
 
-const setTip = () => {};
+const setTip = (input, currNumber) => {
+  if (input > currNumber) {
+    tip1.className = '';
+  }
+  if (input < currNumber) {
+    tip2.className = '';
+  }
+  tip3.className = '';
+};
 
 function numberColorChange(color) {
   var elements = document.getElementsByClassName('segment-border');
-  console.log(elements)
-  elements.forEach((element) => {
-    console.log(element)
-    // element.className = 'segment-border ' + color;
-  });
+  console.log(elements);
+  for (var i = 0; i < elements.length; i++) {
+    elements[i].className = 'segment-border ' + color;
+  }
 }
