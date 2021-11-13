@@ -50,6 +50,7 @@ function imprimiCurrentNumber() {
 let tip1 = document.getElementById('smaller');
 let tip2 = document.getElementById('bigger');
 let tip3 = document.getElementById('win');
+let tip4 = document.getElementById('error');
 
 const setTip = (input, currNumber) => {
   if (input > currNumber) {
@@ -58,8 +59,15 @@ const setTip = (input, currNumber) => {
   if (input < currNumber) {
     tip2.className = '';
   }
-  tip3.className = '';
+  if (input === currNumber) {
+    tip3.className = '';
+  }
+  tip4.className = '';
 };
+
+const handleClickSend = () => {
+  setdisplays()
+}
 
 function numberColorChange(color) {
   var elements = document.getElementsByClassName('segment-border');
