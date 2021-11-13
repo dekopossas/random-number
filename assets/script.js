@@ -12,10 +12,11 @@ let display1 = document.getElementById('display-1');
 let display2 = document.getElementById('display-2');
 let display3 = document.getElementById('display-3');
 
+let currentValue = 0;
 function setdisplays() {
   let baseClass = 'display-container display-size-12 display-no-';
-  let value = document.getElementById('number').value;
-  let arr = [...value];
+  currentValue = document.getElementById('number').value;
+  let arr = [...currentValue];
 
   if (arr.length === 3) {
     display1.className = baseClass + arr[0];
@@ -54,20 +55,40 @@ let tip4 = document.getElementById('error');
 
 const setTip = (input, currNumber) => {
   if (input > currNumber) {
-    tip1.className = '';
+    return (
+      (tip1.className = ''),
+      (tip2.className = 'bigger'),
+      (tip3.className = 'win'),
+      (tip4.className = 'error')
+    );
   }
   if (input < currNumber) {
-    tip2.className = '';
+    return (
+      (tip1.className = 'smaller'),
+      (tip2.className = ''),
+      (tip3.className = 'win'),
+      (tip4.className = 'error')
+    );
   }
   if (input === currNumber) {
-    tip3.className = '';
+    return (
+      (tip1.className = 'smaller'),
+      (tip2.className = 'bigger'),
+      (tip3.className = ''),
+      (tip4.className = 'error')
+    );
   }
-  tip4.className = '';
+
+  (tip1.className = 'smaller'),
+    (tip2.className = 'bigger'),
+    (tip3.className = 'win'),
+    (tip4.className = '');
 };
 
-const handleClickSend = () => {
-  setdisplays()
-}
+const handleSubmit = () => {
+  setdisplays();
+  setTip(currentValue, currentNumber);
+};
 
 function numberColorChange(color) {
   var elements = document.getElementsByClassName('segment-border');
