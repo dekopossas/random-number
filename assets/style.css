@@ -160,14 +160,6 @@ body {
   opacity: 0.1;
 }
 
-.error {
-  border-color: red !important;
-}
-
-.win {
-  border-color: green !important;
-}
-
 .smaller {
   display: none;
 }
@@ -182,4 +174,12 @@ body {
 
 .error {
   display: none;
+}
+
+.new-game {
+  display: none;
+}
+
+.new-game-active{
+  display: block;
 }

@@ -35,13 +35,25 @@ function setdisplays() {
   }
 }
 
+// Imprime as variaveis que eu preciso testar.
 function imprimiValor() {
   let value = document.getElementById('number').value;
   console.log(value);
 }
 
+let newGameBtn = document.getElementById('new-game');
+const checkCurrentNumber = () => {
+  setTimeout(() => {
+    if (currentNumber !== 0 && currentNumber != currentValue) {
+      return (newGameBtn.className = 'new-game');
+    }
+    return (newGameBtn.className = 'new-game-active');
+  }, 500);
+};
+
 function setCurrentNumber() {
   fetchNumber();
+  checkCurrentNumber();
 }
 
 function imprimiCurrentNumber() {
@@ -54,6 +66,8 @@ let tip3 = document.getElementById('win');
 let tip4 = document.getElementById('error');
 
 const setTip = (input, currNumber) => {
+  console.log(currentValue, currentNumber);
+  console.log('input ', typeof(input), 'currNumber', typeof(currNumber));
   if (input > currNumber) {
     return (
       (tip1.className = ''),
@@ -70,7 +84,7 @@ const setTip = (input, currNumber) => {
       (tip4.className = 'error')
     );
   }
-  if (input === currNumber) {
+  if (input == currNumber) {
     return (
       (tip1.className = 'smaller'),
       (tip2.className = 'bigger'),
@@ -78,18 +92,15 @@ const setTip = (input, currNumber) => {
       (tip4.className = 'error')
     );
   }
-
-  (tip1.className = 'smaller'),
-    (tip2.className = 'bigger'),
-    (tip3.className = 'win'),
-    (tip4.className = '');
 };
 
-const handleSubmit = () => {
+const handleClickSend = () => {
   setdisplays();
   setTip(currentValue, currentNumber);
+  checkCurrentNumber();
 };
 
+// ainda não funciona
 function numberColorChange(color) {
   var elements = document.getElementsByClassName('segment-border');
   console.log(elements);
