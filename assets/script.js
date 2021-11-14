@@ -4,13 +4,7 @@ let currentNumber = 0;
 const fetchNumber = () => {
   fetch(URL_TO_FETCH)
     .then((response) => response.json())
-    .then((data) => {
-      try {
-        currentNumber = data.value;
-      } catch {
-        handleResponseError();
-      }
-    })
+    .then((data) => (currentNumber = data.value))
     .catch((err) => console.error('Failed retrieving information', err));
 };
 
@@ -31,6 +25,10 @@ function setdisplays() {
   let baseClass = 'display-container display-size-12 display-no-';
   currentValue = document.getElementById('number').value;
   let arr = [...currentValue];
+  if (currentValue === undefined) {
+    handleResponseError();
+    return (newGameBtn.className = 'new-game-active');
+  }
 
   if (arr.length === 3) {
     display1.className = baseClass + arr[0];
@@ -49,12 +47,6 @@ function setdisplays() {
   }
 }
 
-// Imprime as variaveis que eu preciso testar.
-function imprimiValor() {
-  let value = document.getElementById('number').value;
-  console.log(value);
-}
-
 let newGameBtn = document.getElementById('new-game');
 const checkCurrentNumber = () => {
   setTimeout(() => {
@@ -67,15 +59,11 @@ const checkCurrentNumber = () => {
 
 function setCurrentNumber() {
   fetchNumber(); // Cria um novo jogo,
-  checkCurrentNumber(); // Apaga btn de novo jogo
+  // checkCurrentNumber(); // Apaga btn de novo jogo
   if (currentNumber === 0 && currentNumber === currentValue) {
     //remove span de novo jogo.
     return (spanNewGame.className = 'span-new-game'); // se ele existir
   }
-}
-
-function imprimiCurrentNumber() {
-  console.log(currentNumber);
 }
 
 let tip1 = document.getElementById('smaller');
