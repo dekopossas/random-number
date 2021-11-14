@@ -40,6 +40,10 @@ body {
   border-right: 12px solid transparent;
 }
 
+.display-container.display-size-12 .segment-x .win {
+  border-bottom: 12px solid green !important;
+}
+
 .display-container.display-size-12 .segment-x .segment-border {
   top: 12px;
   left: -12px;
@@ -186,4 +190,8 @@ body {
 
 .input {
   width: 300px;
+}
+
+.span-new-game {
+  display: none;
 }

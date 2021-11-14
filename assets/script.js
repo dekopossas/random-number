@@ -1,10 +1,24 @@
+const handleResponseError = () => {
+  let baseClass = 'display-container display-size-12 display-no-';
+  display1.className = baseClass + '5';
+  display2.className = baseClass + '0';
+  display3.className = baseClass + '2';
+  tip4.className = '';
+};
+
 const URL_TO_FETCH = 'https://us-central1-ss-devops.cloudfunctions.net/rand?min=1&max=300';
 
 let currentNumber = 0;
 const fetchNumber = () => {
   fetch(URL_TO_FETCH)
     .then((response) => response.json())
-    .then((data) => (currentNumber = data.value))
+    .then((data) => {
+      try {
+        currentNumber = data.value;
+      } catch {
+        handleResponseError();
+      }
+    })
     .catch((err) => console.error('Failed retrieving information', err));
 };
 
@@ -24,13 +38,13 @@ function setdisplays() {
     display3.className = baseClass + arr[2];
   }
   if (arr.length === 2) {
-    display1.className = baseClass + 0;
+    display1.className = baseClass + ' win';
     display2.className = baseClass + arr[0];
     display3.className = baseClass + arr[1];
   }
   if (arr.length === 1) {
-    display1.className = baseClass + 0;
-    display2.className = baseClass + 0;
+    display1.className = baseClass + ' win';
+    display2.className = baseClass + ' win';
     display3.className = baseClass + arr[0];
   }
 }
@@ -52,8 +66,12 @@ const checkCurrentNumber = () => {
 };
 
 function setCurrentNumber() {
-  fetchNumber();
-  checkCurrentNumber();
+  fetchNumber(); // Cria um novo jogo,
+  checkCurrentNumber(); // Apaga btn de novo jogo
+  if (currentNumber === 0 && currentNumber === currentValue) {
+    //remove span de novo jogo.
+    return (spanNewGame.className = 'span-new-game'); // se ele existir
+  }
 }
 
 function imprimiCurrentNumber() {
@@ -66,8 +84,6 @@ let tip3 = document.getElementById('win');
 let tip4 = document.getElementById('error');
 
 const setTip = (input, currNumber) => {
-  console.log(currentValue, currentNumber);
-  console.log('input ', typeof(input), 'currNumber', typeof(currNumber));
   if (input > currNumber) {
     return (
       (tip1.className = ''),
@@ -94,10 +110,15 @@ const setTip = (input, currNumber) => {
   }
 };
 
+let spanNewGame = document.getElementById('span');
+
 const handleClickSend = () => {
+  if (currentNumber === 0 && currentNumber === currentValue) {
+    return (spanNewGame.className = '');
+  }
   setdisplays();
   setTip(currentValue, currentNumber);
-  checkCurrentNumber();
+  checkCurrentNumber(); // se por um acaso, o btn ainda estiver ativo ele apaga assim que eu testar um número
 };
 
 // ainda não funciona
