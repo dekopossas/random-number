@@ -180,6 +180,10 @@ body {
   display: none;
 }
 
-.new-game-active{
+.new-game-active {
   display: block;
+}
+
+.input {
+  width: 300px;
 }
