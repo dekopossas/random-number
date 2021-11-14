@@ -1,11 +1,3 @@
-const handleResponseError = () => {
-  let baseClass = 'display-container display-size-12 display-no-';
-  display1.className = baseClass + '5';
-  display2.className = baseClass + '0';
-  display3.className = baseClass + '2';
-  tip4.className = '';
-};
-
 const URL_TO_FETCH = 'https://us-central1-ss-devops.cloudfunctions.net/rand?min=1&max=300';
 
 let currentNumber = 0;
@@ -20,6 +12,14 @@ const fetchNumber = () => {
       }
     })
     .catch((err) => console.error('Failed retrieving information', err));
+};
+
+const handleResponseError = () => {
+  let baseClass = 'display-container display-size-12 display-no-';
+  display1.className = baseClass + '5';
+  display2.className = baseClass + '0';
+  display3.className = baseClass + '2';
+  tip4.className = '';
 };
 
 let display1 = document.getElementById('display-1');
