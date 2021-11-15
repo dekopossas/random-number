@@ -25,10 +25,6 @@ function setdisplays() {
   let baseClass = 'display-container display-size-12 display-no-';
   currentValue = document.getElementById('number').value;
   let arr = [...currentValue];
-  if (currentValue === undefined) {
-    handleResponseError();
-    return (newGameBtn.className = 'new-game-active');
-  }
 
   if (arr.length === 3) {
     display1.className = baseClass + arr[0];
@@ -66,6 +62,10 @@ function setCurrentNumber() {
   }
 }
 
+function imprimiCurrentNumber() {
+  console.log(currentNumber);
+}
+
 let tip1 = document.getElementById('smaller');
 let tip2 = document.getElementById('bigger');
 let tip3 = document.getElementById('win');
@@ -101,7 +101,7 @@ const setTip = (input, currNumber) => {
 let spanNewGame = document.getElementById('span');
 
 const handleClickSend = () => {
-  if (currentNumber === 0 && currentNumber === currentValue && currentNumber === undefined) {
+  if (currentNumber === 0 && currentNumber === currentValue) {
     return (spanNewGame.className = '');
   }
   setdisplays();
