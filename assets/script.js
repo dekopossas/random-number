@@ -50,10 +50,10 @@ function setdisplays() {
 let newGameBtn = document.getElementById('new-game');
 const checkCurrentNumber = () => {
   setTimeout(() => {
-    if (currentNumber !== 0 && currentNumber != currentValue) {
+    if (currentNumber !== 0 && currentNumber != currentValue && currentNumber != undefined) {
       return (newGameBtn.className = 'new-game');
     }
-    if (currentNumber != undefined) {
+    if (currentNumber === undefined) {
       handleResponseError();
       return (newGameBtn.className = 'new-game-active');
     }
