@@ -27,13 +27,13 @@ let display2 = document.getElementById('display-2');
 let display3 = document.getElementById('display-3');
 
 const setDisplayReload = () => {
-  display1.className = baseClass + ' win';
-  display2.className = baseClass + ' win';
+  display1.className = baseClass + ' hide';
+  display2.className = baseClass + ' hide';
   display3.className = baseClass + '0';
-  tip1.className = 'smaller';
-  tip2.className = 'bigger';
-  tip3.className = 'win';
-  tip4.className = 'error';
+  tip1.className = 'hide';
+  tip2.className = 'hide';
+  tip3.className = 'hide';
+  tip4.className = 'hide';
 };
 
 let currentValue = 0;
@@ -47,13 +47,13 @@ function setdisplays() {
     display3.className = baseClass + arr[2];
   }
   if (arr.length === 2) {
-    display1.className = baseClass + ' win';
+    display1.className = baseClass + ' hide';
     display2.className = baseClass + arr[0];
     display3.className = baseClass + arr[1];
   }
   if (arr.length === 1) {
-    display1.className = baseClass + ' win';
-    display2.className = baseClass + ' win';
+    display1.className = baseClass + ' hide';
+    display2.className = baseClass + ' hide';
     display3.className = baseClass + arr[0];
   }
 }
@@ -93,26 +93,26 @@ let tip4 = document.getElementById('error');
 const setTip = (input, currNumber) => {
   if (input > currNumber) {
     return (
-      (tip1.className = ''),
-      (tip2.className = 'bigger'),
-      (tip3.className = 'win'),
-      (tip4.className = 'error')
+      (tip1.className = 'smaller'),
+      (tip2.className = 'hide'),
+      (tip3.className = 'hide'),
+      (tip4.className = 'hide')
     );
   }
   if (input < currNumber) {
     return (
-      (tip1.className = 'smaller'),
-      (tip2.className = ''),
-      (tip3.className = 'win'),
-      (tip4.className = 'error')
+      (tip1.className = 'hide'),
+      (tip2.className = 'bigger'),
+      (tip3.className = 'hide'),
+      (tip4.className = 'hide')
     );
   }
   if (input == currNumber) {
     return (
-      (tip1.className = 'smaller'),
-      (tip2.className = 'bigger'),
-      (tip3.className = ''),
-      (tip4.className = 'error')
+      (tip1.className = 'hide'),
+      (tip2.className = 'hide'),
+      (tip3.className = 'win'),
+      (tip4.className = 'hide')
     );
   }
 };
@@ -128,12 +128,3 @@ const handleClickSend = () => {
   setTip(currentValue, currentNumber);
   checkCurrentNumber(); // se por um acaso, o btn ainda estiver ativo ele apaga assim que eu testar um número
 };
-
-// muda a cor do display
-function numberColorChange(color) {
-  var elements = document.getElementsByClassName('segment-border');
-  console.log(elements);
-  for (var i = 0; i < elements.length; i++) {
-    elements[i].className = 'segment-border ' + color;
-  }
-}

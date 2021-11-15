@@ -1,5 +1,5 @@
 body {
-  margin: 48px;
+  margin: 0px;
   background: #fff;
   font-family: 'Montserrat', sans-serif;
   height: 100vh;
@@ -165,20 +165,40 @@ body {
   opacity: 0.1;
 }
 
-.smaller {
+.hide {
   display: none;
+}
+
+.smaller {
+  color: #ff6600;
+  font-family: Montserrat;
+  font-style: normal;
+  font-size: 16;
+  font-weight: bold;
 }
 
 .bigger {
-  display: none;
+  color: #ff6600;
+  font-family: Montserrat;
+  font-style: normal;
+  font-size: 16;
+  font-weight: bold;
 }
 
 .win {
-  display: none;
+  color: #32bf00;
+  font-family: Montserrat;
+  font-style: normal;
+  font-size: 16;
+  font-weight: bold;
 }
 
 .error {
-  display: none;
+  color: #CC3300;
+  font-family: Montserrat;
+  font-style: normal;
+  font-size: 16;
+  font-weight: bold;
 }
 
 .new-game {
@@ -187,10 +207,28 @@ body {
 
 .new-game-active {
   display: block;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 130px;
+  height: 42px;
+  background: linear-gradient(180deg, rgba(67, 72, 84, 1) 0%, rgba(158, 158, 158, 1) 100%);
+  border-radius: 4px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 12px;
 }
 
 .input {
-  width: 300px;
+  position: relative;
+  width: 217px;
+  height: 42px;
+  border: 1px solid #ff6600;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding-left: 0.5rem;
+  margin-right: 0.68rem;
 }
 
 .span-new-game {
@@ -260,5 +298,16 @@ body {
 
 .tip {
   position: absolute;
-  margin-top:10%
+  margin-top: 200px;
+}
+
+.btn-send {
+  position: relative;
+  width: 70px;
+  height: 42px;
+  background: linear-gradient(180deg, #ef6c00 0%, #c0661c 100%);
+  border-radius: 4px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 12px;
 }
