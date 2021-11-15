@@ -5,7 +5,10 @@ let currentNumber = 0;
 const fetchNumber = () => {
   fetch(URL_TO_FETCH)
     .then((response) => response.json())
-    .then((data) => (currentNumber = data.value))
+    .then((data) => {
+      currentNumber = data.value;
+      setDisplayReload();
+    })
     .catch((err) => console.error('Failed retrieving information', err));
 };
 
@@ -27,6 +30,9 @@ const setDisplayReload = () => {
   display1.className = baseClass + ' win';
   display2.className = baseClass + ' win';
   display3.className = baseClass + '0';
+  tip1.className = 'smaller';
+  tip2.className = 'bigger';
+  tip3.className = 'win';
   tip4.className = 'error';
 };
 
@@ -58,7 +64,6 @@ let newGameBtn = document.getElementById('new-game');
 const checkCurrentNumber = () => {
   setTimeout(() => {
     if (currentNumber !== 0 && currentNumber != currentValue && currentNumber != undefined) {
-      setDisplayReload();
       return (newGameBtn.className = 'new-game');
     }
     if (currentNumber === undefined) {
