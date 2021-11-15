@@ -2,6 +2,10 @@ body {
   margin: 48px;
   background: #fff;
   font-family: 'Montserrat', sans-serif;
+  height: 100vh;
+}
+.section {
+  height: 100vh;
 }
 
 .clear {
@@ -197,10 +201,64 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
+  height: 100vh;
 }
 
 .display {
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
+  position: relative;
+  text-align: center;
+
+  background: -webkit-linear-gradient(rgba(239, 108, 0, 1), rgba(219, 99, 0, 1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2.3rem;
+  letter-spacing: -1px;
+}
+
+.line {
+  width: 255px;
+  height: 1px;
+  background-color: #cfcfcf;
+  border: none;
+  margin-top: -10px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 10vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  left: 0;
+}
+
+.vertical-center {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.section-display {
+  margin-top: 50%;
+}
+
+.tip {
+  position: absolute;
+  margin-top:10%
 }
