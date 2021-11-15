@@ -193,6 +193,14 @@ body {
   display: none;
 }
 
-.won {
-  border-color: green !important;
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.display {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
