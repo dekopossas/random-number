@@ -10,8 +10,8 @@ const fetchNumber = () => {
 };
 
 // Status de erro da requisição
+let baseClass = 'display-container display-size-12 display-no-';
 const handleResponseError = () => {
-  let baseClass = 'display-container display-size-12 display-no-';
   display1.className = baseClass + '5';
   display2.className = baseClass + '0';
   display3.className = baseClass + '2';
@@ -27,11 +27,11 @@ const setDisplayReload = () => {
   display1.className = baseClass + ' win';
   display2.className = baseClass + ' win';
   display3.className = baseClass + '0';
+  tip4.className = 'error';
 };
 
 let currentValue = 0;
 function setdisplays() {
-  let baseClass = 'display-container display-size-12 display-no-';
   currentValue = document.getElementById('number').value;
   let arr = [...currentValue];
 
@@ -53,6 +53,7 @@ function setdisplays() {
 }
 
 // Apaga o btn de New game. E Cria o erro em caso de bad getway
+// Para testar essa function tem que esperar meio segundo.
 let newGameBtn = document.getElementById('new-game');
 const checkCurrentNumber = () => {
   setTimeout(() => {
