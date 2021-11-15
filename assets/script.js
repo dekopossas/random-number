@@ -23,6 +23,12 @@ let display1 = document.getElementById('display-1');
 let display2 = document.getElementById('display-2');
 let display3 = document.getElementById('display-3');
 
+const setDisplayReload = () => {
+  display1.className = baseClass + ' win';
+  display2.className = baseClass + ' win';
+  display3.className = baseClass + '0';
+};
+
 let currentValue = 0;
 function setdisplays() {
   let baseClass = 'display-container display-size-12 display-no-';
@@ -46,11 +52,12 @@ function setdisplays() {
   }
 }
 
-// Apaga o btn de New game.
+// Apaga o btn de New game. E Cria o erro em caso de bad getway
 let newGameBtn = document.getElementById('new-game');
 const checkCurrentNumber = () => {
   setTimeout(() => {
     if (currentNumber !== 0 && currentNumber != currentValue && currentNumber != undefined) {
+      setDisplayReload();
       return (newGameBtn.className = 'new-game');
     }
     if (currentNumber === undefined) {
