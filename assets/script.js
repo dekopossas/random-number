@@ -59,7 +59,7 @@ const checkCurrentNumber = () => {
 
 function setCurrentNumber() {
   fetchNumber(); // Cria um novo jogo,
-  checkCurrentNumber(); // Apaga btn de novo jogo
+  // checkCurrentNumber(); // Apaga btn de novo jogo
   if (currentNumber === 0 && currentNumber === currentValue) {
     //remove span de novo jogo.
     return (spanNewGame.className = 'span-new-game'); // se ele existir
