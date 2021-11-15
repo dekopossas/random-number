@@ -1,5 +1,6 @@
 const URL_TO_FETCH = 'https://us-central1-ss-devops.cloudfunctions.net/rand?min=1&max=300';
 
+// Cria um novo número
 let currentNumber = 0;
 const fetchNumber = () => {
   fetch(URL_TO_FETCH)
@@ -8,6 +9,7 @@ const fetchNumber = () => {
     .catch((err) => console.error('Failed retrieving information', err));
 };
 
+// Status de erro da requisição
 const handleResponseError = () => {
   let baseClass = 'display-container display-size-12 display-no-';
   display1.className = baseClass + '5';
@@ -16,6 +18,7 @@ const handleResponseError = () => {
   tip4.className = '';
 };
 
+// Monta o Display
 let display1 = document.getElementById('display-1');
 let display2 = document.getElementById('display-2');
 let display3 = document.getElementById('display-3');
@@ -43,6 +46,7 @@ function setdisplays() {
   }
 }
 
+// Apaga o btn de New game.
 let newGameBtn = document.getElementById('new-game');
 const checkCurrentNumber = () => {
   setTimeout(() => {
@@ -53,6 +57,7 @@ const checkCurrentNumber = () => {
   }, 500);
 };
 
+// Começa novo jogo, apaga aviso para iniciar um novo jogo se ele estive em tela
 function setCurrentNumber() {
   fetchNumber(); // Cria um novo jogo,
   // checkCurrentNumber(); // Apaga btn de novo jogo
@@ -62,10 +67,7 @@ function setCurrentNumber() {
   }
 }
 
-function imprimiCurrentNumber() {
-  console.log(currentNumber);
-}
-
+// Monta a dica para acertar o chute, apaga o erro caso ele esteja na tela
 let tip1 = document.getElementById('smaller');
 let tip2 = document.getElementById('bigger');
 let tip3 = document.getElementById('win');
@@ -98,6 +100,7 @@ const setTip = (input, currNumber) => {
   }
 };
 
+// Criei um span pra avisar que o display nao vai funcionar sem um jogo em rota
 let spanNewGame = document.getElementById('span');
 
 const handleClickSend = () => {
@@ -109,7 +112,7 @@ const handleClickSend = () => {
   checkCurrentNumber(); // se por um acaso, o btn ainda estiver ativo ele apaga assim que eu testar um número
 };
 
-// ainda não funciona
+// muda a cor do display
 function numberColorChange(color) {
   var elements = document.getElementsByClassName('segment-border');
   console.log(elements);
