@@ -59,7 +59,7 @@ const checkCurrentNumber = () => {
 
 function setCurrentNumber() {
   fetchNumber(); // Cria um novo jogo,
-  // checkCurrentNumber(); // Apaga btn de novo jogo
+  checkCurrentNumber(); // Apaga btn de novo jogo
   if (currentNumber === 0 && currentNumber === currentValue) {
     //remove span de novo jogo.
     return (spanNewGame.className = 'span-new-game'); // se ele existir
@@ -101,7 +101,7 @@ const setTip = (input, currNumber) => {
 let spanNewGame = document.getElementById('span');
 
 const handleClickSend = () => {
-  if (currentNumber === 0 && currentNumber === currentValue) {
+  if (currentNumber === 0 && currentNumber === currentValue && currentNumber === undefined) {
     return (spanNewGame.className = '');
   }
   setdisplays();
