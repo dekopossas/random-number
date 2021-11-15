@@ -42,7 +42,7 @@ body {
 }
 
 .display-container.display-size-12 .segment-x .win {
-  border-bottom: 12px solid green !important;
+  display: none;
 }
 
 .display-container.display-size-12 .segment-x .segment-border {

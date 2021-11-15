@@ -50,17 +50,17 @@ function setdisplays() {
 let newGameBtn = document.getElementById('new-game');
 const checkCurrentNumber = () => {
   setTimeout(() => {
-    if (currentNumber !== 0 && currentNumber != currentValue) {
+    if (currentNumber !== 0 && currentNumber != currentValue && currentNumber != undefined) {
       return (newGameBtn.className = 'new-game');
     }
     return (newGameBtn.className = 'new-game-active');
   }, 500);
 };
 
-// Começa novo jogo, apaga aviso para iniciar um novo jogo se ele estive em tela
+// Começa novo jogo, apaga btn de new game, apaga aviso para iniciar um novo jogo se ele estive em tela
 function setCurrentNumber() {
   fetchNumber(); // Cria um novo jogo,
-  // checkCurrentNumber(); // Apaga btn de novo jogo
+  checkCurrentNumber(); // Apaga btn de novo jogo
   if (currentNumber === 0 && currentNumber === currentValue) {
     //remove span de novo jogo.
     return (spanNewGame.className = 'span-new-game'); // se ele existir
