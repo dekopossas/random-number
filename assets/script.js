@@ -18,7 +18,7 @@ const handleResponseError = () => {
   display1.className = baseClass + '5';
   display2.className = baseClass + '0';
   display3.className = baseClass + '2';
-  tip4.className = '';
+  tip4.className = 'error';
 };
 
 // Monta o Display
