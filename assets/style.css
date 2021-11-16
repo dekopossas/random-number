@@ -169,17 +169,8 @@ body {
   display: none;
 }
 
-.smaller {
+.smaller-bigger {
   color: #ff6600;
-  font-family: Montserrat;
-  font-style: normal;
-  font-size: 16;
-  font-weight: bold;
-}
-
-.bigger {
-  color: #ff6600;
-  font-family: Montserrat;
   font-style: normal;
   font-size: 16;
   font-weight: bold;
@@ -187,7 +178,6 @@ body {
 
 .win {
   color: #32bf00;
-  font-family: Montserrat;
   font-style: normal;
   font-size: 16;
   font-weight: bold;
@@ -195,7 +185,6 @@ body {
 
 .error {
   color: #CC3300;
-  font-family: Montserrat;
   font-style: normal;
   font-size: 16;
   font-weight: bold;

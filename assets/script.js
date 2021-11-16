@@ -93,7 +93,7 @@ let tip4 = document.getElementById('error');
 const setTip = (input, currNumber) => {
   if (input > currNumber) {
     return (
-      (tip1.className = 'smaller'),
+      (tip1.className = 'smaller-bigger'),
       (tip2.className = 'hide'),
       (tip3.className = 'hide'),
       (tip4.className = 'hide')
@@ -102,7 +102,7 @@ const setTip = (input, currNumber) => {
   if (input < currNumber) {
     return (
       (tip1.className = 'hide'),
-      (tip2.className = 'bigger'),
+      (tip2.className = 'smaller-bigger'),
       (tip3.className = 'hide'),
       (tip4.className = 'hide')
     );
